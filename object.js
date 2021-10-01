@@ -181,3 +181,19 @@ console.log(bike._name);
 console.log(bike.color);
 
 bike.mileage();
+
+//setters and getters in an object
+const obj = {
+  set objName(val) {
+    if (val === "") {
+      return;
+    }
+    this._n = val;
+  },
+  get objName() {
+    return this._n;
+  },
+};
+
+obj.objName = "ObjectName"; //setter triggered
+console.log(obj.objName); //getter triggered
