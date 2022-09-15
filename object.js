@@ -1,3 +1,21 @@
+const setting = await Setting.findAll({ attributes: ["field", "value"] });
+
+		// let data = setting.filter(
+		// 	(obj) =>
+		// 		obj.field === "admin_email" ||
+		// 		obj.field === "admin_mobileno" ||
+		// 		obj.field === "location" ||
+		// 		obj.field === "whatsapp_number"
+		// );
+		
+
+// converting object field as a key and value
+		data = setting.reduce((obj, item) => {
+			obj[item["field"]] = { value: item["value"] };
+			return obj;
+		}, {});
+///////////////////////////
+
 const person = {
 	name: "Max",
 	age: 30,
